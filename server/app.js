@@ -42,6 +42,10 @@ app.get('/generador', (req, res) => {
         .catch(err => console.log(err));
 });
 
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 - Página no encontrada</h1>');
+});
+
 
 app.listen(PORT, () => {
     
