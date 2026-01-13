@@ -1,7 +1,7 @@
 import express from 'express';
 import { qrURL, qrBuffer } from '../qrGenerador.js'
 
-const PORT = 3005
+const PORT = 3000
 
 const app = express();
 
