@@ -1,0 +1,21 @@
+{
+  "name": "qr",
+  "version": "1.0.0",
+  "description": "herramienta para generar qrs",
+  "keywords": [
+    "node",
+    "js",
+    "QR"
+  ],
+  "license": "ISC",
+  "author": "jesus escalante",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./server/app.js"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "qrcode": "1.5.4"
+  }
+}
