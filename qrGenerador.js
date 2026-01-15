@@ -16,11 +16,11 @@ import QRCode from 'qrcode'
 function qrURL() {
     let texto = 'Hola mundo esto es un texto';
     
-    return QRCode.toDataURL(texto)
+    return QRCode.toDataURL(texto, { errorCorrectionLevel: 'H', margin: 0 })
 }
 
-function qrBuffer(dato1) {
-    return QRCode.toBuffer(dato1);
+function qrBuffer(data) {
+    return QRCode.toBuffer(data, { errorCorrectionLevel: 'H', margin: 0 });
 }
 
 /* generarQR()

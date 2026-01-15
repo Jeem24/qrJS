@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     res.send('<h1>Hola Mundo</h1>').status(200);
 });
 
-app.get('/qr', (req, res) => {
+app.get('/test', (req, res) => {
     qrURL()
         .then(result => res.send(`
             <!DOCTYPE html>
@@ -25,19 +25,19 @@ app.get('/qr', (req, res) => {
                 <img id="qrImg" src='${result}'>
             </body>
             </html>
-            `))
+            `).status(200))
         .catch(err => console.log(err));
 });
 
-app.get('/generador', (req, res) => {
-    const dato1 = req.query.dato1 ?? 'texto texto no enviado';
+app.get('/QRCode', (req, res) => {
+    const data = req.query.data ?? 'texto no enviado';
 
-    qrBuffer(dato1)
+    qrBuffer(data)
         .then(result => {
             console.log('nueva petición');
-            console.log(dato1)
+            console.log(data);
             res.setHeader('Content-Type', 'image/png');
-            res.send(result);
+            res.send(result).status(200);
         })
         .catch(err => console.log(err));
 });
